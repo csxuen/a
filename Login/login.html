@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log in Page</title>
+
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div class = "topBar">
+        <img class = "logo" src="logo.png" alt="Website Logo">
+    </div>
+    <main class = "pageContent">
+        <div class = "content">
+            <h1>Log In</h1>
+        </div>
+        <div class = "loginContent">
+            <div class = "loginFirstContent">
+                <h2>Welcome back to Eco Event !</h2>
+                <p>Log in or Sign up to access more information</p>
+            </div>
+            <br>
+            <form class = "loginForm" action="login.php" method = "post">
+                <label for="email">Email Address</label>
+                <input type="email" name="email" id="" required>
+                <br>
+                <label for="password">Password</label>
+                <input minlength = "8" type="password" name="password" id="" required>
+                <div class = "rememberMe">
+                    <input type="checkbox" name="remember" id="remember">
+                    <label for="remember">Remember me</label>
+                </div>
+                <br>
+                <button class = "loginButton" type="submit">Login</button>
+            </form>
+            <hr>
+            <div class = "loginLastContent">
+                <p>Don't have an account? <a href="CreateAccountParticipant.html">Create your account</a></p>
+            </div>
+        </div>
+    </main>
+    <div class = "bottomContent">
+        <hr>
+        <footer>
+            &copy; 2026 EcoEvents. All rights reserved.
+        </footer>
+    </div>
+
+    <!-- Pop up message after the user click submit -->
+    <div class = "popupOverlay" id = "popupOverlay">
+        <div class = "popupBox">
+            <a href="login.html" class="closeButton">&times;</a>
+            <h2>Your account is not approve yet!</h2>
+            <p>
+                Please wait for admin approval or click Contact Us for questions.
+            </p>
+
+            <div class = "popupButtons">
+                <button class = "okButton" onclick = "closePopup()">Ok</button>
+                <button class = "contactUsButton">Contact Us</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    function showPopup() {
+        document.getElementById('popupOverlay').style.display = 'block';
+    }
+    
+    function closePopup() {
+        document.getElementById('popupOverlay').style.display = 'none';
+        window.location.href = 'login.html';
+    }
+
+    const parameter = new URLSearchParams(window.location.search);
+    const error = parameter.get('error');
+
+    if (error === 'wrongpassword') {
+        alert('Incorrect password!');
+    }else if (error === 'notfound') {
+        alert('User not found! Please sign up first!');
+    }else if(error == 'notapproved') {
+        showPopup();
+    }
+</script>
+
+</html>
