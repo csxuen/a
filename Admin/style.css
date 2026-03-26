@@ -1,0 +1,524 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    font-family: 'Times New Roman', Times, serif
+}
+
+:root{
+    --header:#e9eee8;
+    --background:#ddecda;
+    --button:linear-gradient(135deg,#2f855a,#48bb78);
+}
+
+body{
+    margin:0;
+    font-family:'Times New Roman', Times, serif;
+    background:var(--background);
+}
+
+/* HEADER */
+
+.topBar {
+    background-color: #E9EEE8;
+    display: flex;
+    align-items: center;
+    padding: 10px 16px;
+    gap: 12px;
+    padding-bottom: 0.38%;
+}
+
+.logo {
+    margin: 10px 80px;
+    width: 120px;
+}
+
+.topRight{
+    margin-left: auto;
+    margin-right: 80px;
+    display: flex;
+    gap: 20px;
+    flex-shrink: 0;
+}
+
+.topRight a {
+    display: flex;
+}
+
+.icon{
+    width: 30px;
+    height: auto;
+    object-fit: contain;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.icon:hover {
+    opacity: 0.7;
+}
+
+.logoutBtn{
+    background: linear-gradient(135deg,#2f855a,#48bb78);
+    color: black;
+    border-radius: 12px;
+    padding: 10px 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.logoutBtn:hover {
+    background: linear-gradient(135deg,#236242,#3b9a62);
+    color: white;
+}
+
+
+/* LAYOUT */
+
+.container{
+    display:flex;
+    width: 100%;
+}
+
+.sideBar {
+    background-color: #899d87;
+    width: 280px;
+    min-width: 150px;
+    padding: 20px 10px;
+    box-sizing: border-box;
+    min-height: 100vh;
+}
+
+.sideBar a {
+    padding: 20px;
+    text-decoration: none;
+    color: black;
+    display: block;
+    white-space: nowrap;
+    transition: background-color 0.3s ease;
+    margin: 10px 0;
+}
+
+.sideBar a:hover {
+    background-color: #aabba9;
+    border-radius: 6px;
+    padding-left: 35px;
+    color: white;
+}
+
+.dashboard, .userManagement, .waste, .eventApproval {
+    background-color: #C4D7C1;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-weight: bold;
+}
+
+/* Hamburger */
+
+.hamburger {
+    display: none;
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    box-shadow: none;
+}
+
+.hamburger:hover {
+    color: #4a4a4a;
+}
+
+.closeSideBar {
+    background: none;
+    border: none;
+    display: none;
+    font-size: 2rem;
+    margin: 10px 20px;
+    color: white;
+    box-shadow: none;
+}
+
+.closeSideBar:hover {
+    color: #585858;
+}
+
+/* MAIN CONTENT */
+
+.mainContent{
+    margin: 30px 80px;
+    margin-left: 50px;
+    flex: 1;
+    min-width: 0;
+}
+
+.mainContent p {
+    padding: 10px 0;
+}
+
+.desc{
+    margin-bottom: 30px;
+    padding-left: 7%;
+    color: #555;
+}
+
+
+/* DASHBOARD CARDS */
+
+.cards{
+    display:flex;
+    gap:20px;
+    margin-top:20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card{
+    background:white;
+    padding:20px;
+    border-radius:8px;
+    width:200px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card h3{
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.card h2{
+    margin: 5px 0;
+}
+
+
+/* CHART AREA */
+
+.charts{
+    display:flex;
+    gap:20px;
+    margin-top:30px;
+    justify-content: center;
+}
+
+.chartBox{
+    background:white;
+    padding:20px;
+    width:400px;
+    box-sizing: border-box;
+    height:300px;
+    min-height: 250px;
+    border-radius:8px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    
+
+}
+
+.chartBox h3 {
+    align-self: flex-start;
+}
+
+.pietitle {
+    margin-bottom: 30px;
+}
+
+
+/* ACTION BUTTONS */
+
+.actions{
+    margin-top:30px;
+    gap: 20px;
+    justify-content: center;
+    display: flex;
+}
+
+.actionBtn{
+    background:var(--button);
+    color:white;
+    padding:10px 20px;
+    border-radius:8px;
+    text-decoration:none;
+    margin-right:10px;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.actionBtn:hover {
+    background: linear-gradient(135deg,#236242,#3b9a62);
+    color: white;
+}
+
+/* Event Approval */
+
+.sectionTitle{
+    margin-bottom: 15px;
+}
+
+.eventTable {
+    margin: 10px 0;
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 6px;
+    overflow: hidden;
+    table-layout: auto;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.tableHeader{
+    background-color: #669e78;
+}
+
+.eventTable th,
+.eventTable td{
+    padding: 10px;
+    text-align: center;
+    word-break: break-word;
+    overflow-wrap: break-word;
+}
+
+tr{
+    border-bottom: 1px solid #ddd;
+}
+
+td {
+    background-color: rgb(233, 238, 232);
+    font-size: 0.9em;
+}
+
+/* Button */
+
+.approveBtn{
+    background: #48bb78;
+    border: none;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-right: 5px;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+}
+
+.approveBtn:hover {
+    background: #3b9c64;
+    color: white;
+}
+
+.rejectBtn{
+    background: #e53e3e;
+    border: none;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+}
+
+.rejectBtn:hover {
+    background: #be3333;
+    color: white;
+}
+
+
+/* Status */
+
+.approved{
+    color: #48bb78;
+    font-weight: bold;
+}
+
+.rejected{
+    color: red;
+    font-weight: bold;
+}
+
+/* User Management */
+
+.activeStatus{
+    color: #000000;
+}
+/* 
+.deactivatedStatus{
+    color: red;
+    font-weight: bold;
+} */
+
+.deactivateBtn{
+    background: #777;
+    border: none;
+    color: white;
+    padding: 8px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.deactivateBtn:hover{
+    background: #181818;
+}
+
+.activeBtn{
+    background: #a3cd9f;
+    border: none;
+    color: black;
+    padding: 8px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.activeBtn:hover{
+    background: #5f6f5d;
+}
+
+/* Waste Report */
+
+.viewBtn{
+    text-decoration: none;
+    background: #a3cd9f;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 6px;
+    font-size: 0.9em;
+    color: black;
+    display: inline-block;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.viewBtn:hover{
+    background: #5f6f5d;
+}
+
+.viewBtn a {
+    text-decoration: none;
+    color: black;
+
+}
+
+/* View Report */
+
+.pageHeader{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.backBtn{
+    text-decoration: none;
+    background: linear-gradient(135deg,#2f855a,#48bb78);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 6px;
+}
+
+.backBtn:hover{
+    background: green;
+}
+
+.eventTitle{
+    padding-left: 7%;
+    margin-bottom: 20px;
+}
+
+.reportInfo{
+    width: 90%;
+    margin: 0 auto 30px 7%;
+    background: white;
+    border-radius: 6px;
+    overflow: hidden;
+    /* margin-bottom: 30px; */
+}
+
+.infoRow{
+    display: table;
+    width: 100%;
+    border-bottom: 1px solid #bbb;
+}
+
+
+.infoRow:last-child{
+    border-bottom: none;
+}
+
+.infoLabel{
+    display: table-cell;
+    width: 200px;
+    font-weight: bold;
+    padding: 12px 15px;
+    background-color: #669e78;
+}
+
+.infoValue{
+    display: table-cell;
+    padding: 12px 15px;
+}
+
+/* Responsive */
+
+@media screen and (max-width: 768px) {
+    .sideBar {
+        width: fit-content;
+        padding-top: 20px;
+        position: fixed;
+        top: 0;
+        left: -100%;
+        height: 100%;
+        z-index: 1000;
+        transition: left 0.3s ease;
+    }
+
+    .sideBar a {
+        white-space: normal;
+        padding: 20px 20px;
+    }
+
+    .mainContent {
+        margin: 15px;
+    }
+
+    .logo {
+        width: 90px;
+        margin: 0;
+        margin-left: 20px;
+    }
+
+    .topRight p {
+        padding: 6px 12px;
+        font-size: 0.875rem;
+    }
+
+    .topRight {
+        margin-right: 15px;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .container {
+        display: block;
+    }
+
+    .sideBar.active {
+        left: 0;
+    }
+
+    .closeSideBar {
+        display: block;
+    }
+
+}
